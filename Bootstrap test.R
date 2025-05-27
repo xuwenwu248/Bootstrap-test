@@ -25,9 +25,9 @@ done
 ##result statistic
 for i in `seq 1 1000`
 do
-cat result${i}.assoc.txt | awk '{if($13 <= 1.3e-9) print '"$i"',$3,$13}' | sort -gk2  >> target_all
+cat result${i}.assoc.txt | awk '{if($13 <= 1.48e-7) print '"$i"',$3,$13}' | sort -gk2  >> target_all
 done
 
-awk '{if($2 >= 5731147 && $2 <= 5732809) print $0}' target_all > tmp
+awk '{if($2 >= 5731847 && $2 <= 5732809) print $0}' target_all > tmp
 awk '{print $1}' tmp | sort | uniq | wc
 
